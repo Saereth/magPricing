@@ -1,0 +1,28 @@
+﻿<Application x:Class="MagPricing.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MagPricing"
+             xmlns:viewModel="clr-namespace:MagPricing.MVVM.ViewModel"
+             xmlns:view="clr-namespace:MagPricing.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextboxTheme.xaml"/>
+                <ResourceDictionary Source="Theme/ModernDropDownBox.xaml" />
+                <ResourceDictionary Source="Theme/TabControlModern.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ScreenPrintViewModel}">
+                <view:ScreenPrintView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:EmbroideryViewModel}">
+                <view:EmbroideryView />
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
